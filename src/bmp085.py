@@ -20,7 +20,7 @@ class BMP085:
     def __init__(self, i2cChannel, slaveAddress) -> None:
         self.iI2CChannel = i2cChannel
         self.i2c = SMBus(bus = self.iI2CChannel)
-        # I¹C address
+        # I²C address
         self.iSlaveAddress = slaveAddress
     
 # get data from bmp085

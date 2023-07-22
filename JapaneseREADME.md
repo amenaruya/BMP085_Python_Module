@@ -40,11 +40,11 @@ class BMP085:
 # 関数
     # 初期化
     def __init__(self, i2cChannel, slaveAddress) -> None:
-        # I¹Cチャンネル
+        # I²Cチャンネル
         self.iI2CChannel = i2cChannel
-        # I¹Cチャンネルに基づきSMBusを設定する
+        # I²Cチャンネルに基づきSMBusを設定する
         self.i2c = SMBus(bus = self.iI2CChannel)
-        # スレイブアドレス、I¹Cアドレス
+        # スレイブアドレス、I²Cアドレス
         self.iSlaveAddress = slaveAddress
 
     # メモリーから数値を取得する
@@ -234,6 +234,20 @@ class BMP085:
 
 「[これ1冊でできる！ラズベリー･パイ 超入門 改訂第7版 Raspberry Pi 1+/2/3/4/400/Zero/Zero W/Zero 2 W 対応](http://www.sotechsha.co.jp/pc/html/1297.htm)」の付録である`so1602.py`を用いたプログラムです。
 有機ELディスプレイに温度と気圧を表示する拙いものです。
+
+`slave address`は端末から調べることができます。
+Raspberry Piの`I²C channel`は通常`1`であることから、本例でも`1`としています。
+
+``` bash
+i2cdetect 1
+```
+
+得られた結果が次の通りであったため、プログラムにも同内容を記述しています。
+
+|機器名|slave address|
+|:-:|:-:|
+|bmp085|0x77|
+|so1602|0x3c|
 
 ``` Python
 from bmp085 import BMP085
