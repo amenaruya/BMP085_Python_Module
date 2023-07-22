@@ -131,7 +131,7 @@ class BMP085:
 
         return iUT
 
-    #実温度(℃)を計算する
+    # 実温度(℃)を計算する
     def getTemprature(self):
         # 無補償温度値
         iUT = self.__getUncompensatedTemperature()
@@ -190,7 +190,7 @@ class BMP085:
 
         return iUP
 
-    #実気圧(hPa)を計算する
+    # 実気圧(hPa)を計算する
     def getPressure(self):
         # 無補償気圧値
         iUP = self.__getUncompensatedPressure()
