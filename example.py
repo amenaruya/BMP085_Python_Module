@@ -14,7 +14,7 @@ while True:
     pressure = sensor.getPressure()
 
     print(
-    "temprature：{}℃\npressure；{}hPa"
+        "temprature：{}℃\npressure；{}hPa"
         .format(
             temprature,
             pressure
