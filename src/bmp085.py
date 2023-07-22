@@ -58,7 +58,7 @@ class BMP085:
         self.dictCCs["iMC"] = (self.lReadData[18] << 8) + self.lReadData[19]
         self.dictCCs["iMD"] = (self.lReadData[20] << 8) + self.lReadData[21]
     
-# get temprature [℃]
+# get temperature [℃]
     def __getUncompensatedTemperature(self):
         self.i2c.write_byte_data(
             i2c_addr = self.iSlaveAddress,
@@ -84,8 +84,8 @@ class BMP085:
 
         return iUT
     
-    def getTemprature(self):
-        # get uncompensated temprature data
+    def getTemperature(self):
+        # get uncompensated temperature data
         iUT = self.__getUncompensatedTemperature()
 
         X1 = int(((iUT - self.dictCCs["iAC6"]) * self.dictCCs["iAC5"]) >> 15)

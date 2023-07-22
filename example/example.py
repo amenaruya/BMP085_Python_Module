@@ -9,14 +9,14 @@ sensor = BMP085(
 while True:
     sensor.getNewData()
     
-    temprature = sensor.getTemprature()
+    temperature = sensor.getTemperature()
 
     pressure = sensor.getPressure()
 
     print(
-        "temprature：{}℃\npressure；{}hPa"
+        "temperature：{}℃\npressure；{}hPa"
         .format(
-            temprature,
+            temperature,
             pressure
         )
     )

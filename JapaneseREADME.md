@@ -132,7 +132,7 @@ class BMP085:
         return iUT
 
     # 実温度(℃)を計算する
-    def getTemprature(self):
+    def getTemperature(self):
         # 無補償温度値
         iUT = self.__getUncompensatedTemperature()
 
@@ -281,7 +281,7 @@ while True:
     sensor.getNewData()
     
     # 温度を取得する
-    temprature = sensor.getTemprature()
+    temperature = sensor.getTemperature()
 
     # 気圧を取得する
     pressure = sensor.getPressure()
@@ -289,7 +289,7 @@ while True:
     # 表示する
     display.write(
         "{} degree(C)"
-        .format(temprature)
+        .format(temperature)
     )
     # 改行
     display.move(0x00, 0x01)
