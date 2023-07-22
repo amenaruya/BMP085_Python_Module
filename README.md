@@ -1,6 +1,6 @@
 # BMP085_Python_Module
 
-Python module for easy using BMP085 with Raspberry Pi.
+Python module use `BMP085` with Raspberry Pi easily.
 This module is importing `smbus2`.
 If you haven't installed it:
 
